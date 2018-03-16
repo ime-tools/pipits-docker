@@ -14,7 +14,19 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/ime-tools/pipits-docker"
 
-RUN apt update && apt install --yes --no-install-recommends biom-format-tools fastx-toolkit hmmer python-pip python3-setuptools python-setuptools openjdk-8-jre-headless wget unzip
+RUN apt update && \
+    apt install --yes --no-install-recommends \
+        biom-format-tools \
+        fastx-toolkit \
+        hmmer \
+        python-pip \
+        python3-setuptools \
+        python-setuptools \
+        openjdk-8-jre-headless \
+        wget \
+        unzip && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN pip install numpy
 
 ENV PIPITS_DIR=/opt/pipits
