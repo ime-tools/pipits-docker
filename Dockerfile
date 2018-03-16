@@ -25,3 +25,7 @@ RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
     wget http://sourceforge.net/projects/pipits/files/UNITE_retrained_28.06.2017.tar.gz -O UNITE_retrained_28.06.2017.tar.gz && \
     rm -rf UNITE_retrained && \
     tar xvfz UNITE_retrained_28.06.2017.tar.gz
+
+RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
+    wget https://unite.ut.ee/sh_files/uchime_reference_dataset_01.01.2016.zip -O uchime_reference_dataset_01.01.2016.zip && \
+    unzip uchime_reference_dataset_01.01.2016.zip
