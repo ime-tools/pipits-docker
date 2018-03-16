@@ -29,3 +29,7 @@ RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
 RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
     wget https://unite.ut.ee/sh_files/uchime_reference_dataset_01.01.2016.zip -O uchime_reference_dataset_01.01.2016.zip && \
     unzip uchime_reference_dataset_01.01.2016.zip
+
+RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
+    wget https://sourceforge.net/projects/pipits/files/warcup_retrained_V2.tar.gz && \
+    tar xvzf warcup_retrained_V2.tar.gz
