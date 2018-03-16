@@ -1,4 +1,18 @@
-FROM ubuntu:xenial
+ARG baseimage_version=xenial
+FROM ubuntu:${baseimage_version}
+
+ARG version=master
+ARG VCS_REF
+ARG BUILD_DATE
+
+RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", branch: "${version}
+
+LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
+      description="Container for the PITITS package" \
+      version="1.0" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/ime-tools/pipits-docker"
 
 RUN apt update && apt install --yes --no-install-recommends biom-format-tools fastx-toolkit hmmer python-pip python3-setuptools python-setuptools openjdk-8-jre-headless wget unzip
 RUN pip install numpy
