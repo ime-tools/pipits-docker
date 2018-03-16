@@ -15,7 +15,11 @@ RUN wget https://github.com/torognes/vsearch/releases/download/v2.4.3/vsearch-2.
 RUN wget http://microbiology.se/sw/ITSx_1.0.11.tar.gz && \
     tar xvfz ITSx_1.0.11.tar.gz && \
     ln -s $PWD/ITSx_1.0.11/ITSx ${PIPITS_DIR}/bin/ITSx && \
-    ln -s $PWD/ITSx_1.0.11/ITSx_db ${PIPITS_DIR}/bin/ITSx_db
+    ln -s $PWD/ITSx_1.0.11/ITSx_db ${PIPITS_DIR}/bin/ITSx_db && \
+    cd ${PIPITS_DIR}/bin/ITSx_db/HMMs && \
+    rm -f *.hmm.* && \
+    echo *.hmm | xargs -n1 hmmpress; \
+    cd -
 
 RUN wget https://sourceforge.net/projects/rdp-classifier/files/rdp-classifier/rdp_classifier_2.12.zip && \
     unzip rdp_classifier_2.12.zip && \
