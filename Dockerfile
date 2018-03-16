@@ -14,3 +14,7 @@ RUN wget http://microbiology.se/sw/ITSx_1.0.11.tar.gz && \
     tar xvfz ITSx_1.0.11.tar.gz && \
     ln -s $PWD/ITSx_1.0.11/ITSx /usr/local/bin/ITSx && \
     ln -s $PWD/ITSx_1.0.11/ITSx_db /usr/local/bin/ITSx_db
+
+RUN wget https://sourceforge.net/projects/rdp-classifier/files/rdp-classifier/rdp_classifier_2.12.zip && \
+    unzip rdp_classifier_2.12.zip && \
+    ln -s $PWD/rdp_classifier_2.12/dist/classifier.jar /usr/local/bin/classifier.jar
