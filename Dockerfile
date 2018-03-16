@@ -33,3 +33,10 @@ RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
 RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
     wget https://sourceforge.net/projects/pipits/files/warcup_retrained_V2.tar.gz && \
     tar xvzf warcup_retrained_V2.tar.gz
+
+ENV PATH=${PIPITS_DIR}/bin:$PATH
+ENV PYTHONPATH=${PIPITS_DIR}/lib/python2.7/site-packages:$PYTHONPATH
+ENV PIPITS_UNITE_REFERENCE_DATA_CHIMERA=${PIPITS_DIR}/refdb/uchime_reference_dataset_01.01.2016/uchime_reference_dataset_01.01.2016.fasta
+ENV PIPITS_UNITE_RETRAINED_DIR=${PIPITS_DIR}/refdb/UNITE_retrained
+ENV PIPITS_WARCUP_RETRAINED_DIR=${PIPITS_DIR}/refdb/warcup_retrained_V2
+ENV PIPITS_RDP_CLASSIFIER_JAR=${PIPITS_DIR}/classifier.jar
