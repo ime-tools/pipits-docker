@@ -20,3 +20,8 @@ RUN wget http://microbiology.se/sw/ITSx_1.0.11.tar.gz && \
 RUN wget https://sourceforge.net/projects/rdp-classifier/files/rdp-classifier/rdp_classifier_2.12.zip && \
     unzip rdp_classifier_2.12.zip && \
     ln -s $PWD/rdp_classifier_2.12/dist/classifier.jar ${PIPITS_DIR}/classifier.jar
+
+RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
+    wget http://sourceforge.net/projects/pipits/files/UNITE_retrained_28.06.2017.tar.gz -O UNITE_retrained_28.06.2017.tar.gz && \
+    rm -rf UNITE_retrained && \
+    tar xvfz UNITE_retrained_28.06.2017.tar.gz
