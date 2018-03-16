@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-RUN apt update && apt install --yes --no-install-recommends biom-format-tools fastx-toolkit hmmer python-pip openjdk-8-jre-headless wget unzip
+RUN apt update && apt install --yes --no-install-recommends biom-format-tools fastx-toolkit hmmer python-pip python3-setuptools python-setuptools openjdk-8-jre-headless wget unzip
 RUN pip install numpy
 
 ENV PIPITS_DIR=/opt/pipits
