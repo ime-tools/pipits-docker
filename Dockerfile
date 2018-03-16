@@ -20,7 +20,11 @@ RUN pip install numpy
 ENV PIPITS_DIR=/opt/pipits
 
 WORKDIR /opt
-RUN wget https://github.com/hsgweon/pipits/archive/1.5.0.tar.gz -O 1.5.0.tar.gz && tar xvfz 1.5.0.tar.gz && cd pipits-1.5.0 && python setup.py install --prefix=${PIPITS_DIR} && cd -
+RUN wget https://github.com/hsgweon/pipits/archive/1.5.0.tar.gz -O 1.5.0.tar.gz && \
+    tar xvfz 1.5.0.tar.gz && \
+    cd pipits-1.5.0 && \
+    python setup.py install --prefix=${PIPITS_DIR} && \
+    cd -
 
 RUN wget https://github.com/torognes/vsearch/releases/download/v2.4.3/vsearch-2.4.3-linux-x86_64.tar.gz && \
     tar xvfz vsearch-2.4.3-linux-x86_64.tar.gz && \
