@@ -4,4 +4,5 @@ RUN apt update && apt install --yes --no-install-recommends biom-format-tools fa
 RUN pip install numpy
 
 WORKDIR /opt
-RUN wget https://github.com/hsgweon/pipits/archive/1.5.0.tar.gz -O 1.5.0.tar.gz && tar xvfz 1.5.0.tar.gz
+RUN wget https://github.com/hsgweon/pipits/archive/1.5.0.tar.gz -O 1.5.0.tar.gz && tar xvfz 1.5.0.tar.gz && cd pipits-1.5.0 && python setup.py install --prefix=/usr/local/ && cd -
+
