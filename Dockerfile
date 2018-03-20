@@ -65,17 +65,19 @@ RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
     wget http://sourceforge.net/projects/pipits/files/UNITE_retrained_28.06.2017.tar.gz -O UNITE_retrained_28.06.2017.tar.gz && \
     rm -rf UNITE_retrained && \
     tar xvfz UNITE_retrained_28.06.2017.tar.gz && \
-    chmod a+r /opt/pipits/refdb/UNITE_retrained/* && \
+    chmod -R a+r /opt/pipits/refdb && \
     rm UNITE_retrained_28.06.2017.tar.gz
 
 RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
     wget https://unite.ut.ee/sh_files/uchime_reference_dataset_01.01.2016.zip -O uchime_reference_dataset_01.01.2016.zip && \
     unzip uchime_reference_dataset_01.01.2016.zip && \
+    chmod -R a+r /opt/pipits/refdb && \
     rm uchime_reference_dataset_01.01.2016.zip
 
 RUN mkdir -p ${PIPITS_DIR}/refdb && cd ${PIPITS_DIR}/refdb && \
     wget https://sourceforge.net/projects/pipits/files/warcup_retrained_V2.tar.gz && \
     tar xvzf warcup_retrained_V2.tar.gz && \
+    chmod -R a+r /opt/pipits/refdb && \
     rm warcup_retrained_V2.tar.gz
 
 ENV PATH=${PIPITS_DIR}/bin:$PATH
