@@ -24,6 +24,8 @@ RUN apt update && \
         python-setuptools \
         openjdk-8-jre-headless \
         wget \
+	bzip2 \
+	gzip \
         unzip && \
     rm -rf /var/lib/apt/lists/*
 
